@@ -13,7 +13,7 @@
             {
                 "action": "\\CaptainHook\\App\\Hook\\File\\Action\\DoesNotContainRegex",
                 "options": {
-                  "regex": "#debug|var_dump#i",
+                  "regex": "#var_dump#i",
                   "fileExtensions": [
                     "inc",
                     "php"
