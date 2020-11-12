@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" product-name="buildinfo">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" product-name="buildinfo">
         <body>
             <trans-unit id="constants.buildinfo">
                 <source>WD - Buildinfo</source>
+                <target>WD - Buildinfo</target>
             </trans-unit>
             <trans-unit id="constants.buildNumberFile">
                 <source>Build number file:Filename where the current build number is contained (relative to project root).</source>
+                <target>Build Nummer Datei:Der Dateiname der Datei, welche die aktuelle Build Nummer enthält (relativ zum Projekt Root).</target>
             </trans-unit>
             <trans-unit id="constants.buildTimestampFile">
                 <source>Build timestamp file:Filename where the timestamp of the current build is contained (relative to project root).</source>
+                <target>Build Timestap Datei:Der Dateiname der Datei, welche den Timestamp des aktuellen Builds enthält (relativ zum Projekt Root).</target>
             </trans-unit>
             <trans-unit id="buildNumber.title">
                 <source>Current build number</source>
+                <target>Aktuelle Build Nummer</target>
             </trans-unit>
             <trans-unit id="buildTimestamp.title">
                 <source>Date of current build</source>
+                <target>Datum aktueller Build</target>
             </trans-unit>
             <trans-unit id="age.title">
                 <source>age</source>
+                <target>Alter</target>
             </trans-unit>
             <trans-unit id="hours.title">
                 <source>hours</source>
+                <target>Stunden</target>
             </trans-unit>
             <trans-unit id="days.title">
                 <source>days</source>
+                <target>Tage</target>
             </trans-unit>
         </body>
     </file>

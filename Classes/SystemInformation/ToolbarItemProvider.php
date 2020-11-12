@@ -45,7 +45,7 @@ final class ToolbarItemProvider
         $buildFile = $this->projectPath . '/buildNumber.txt';
         if (file_exists($buildFile) && !empty($buildFile)) {
             $event->getToolbarItem()->addSystemInformation(
-                $this->getLanguageService()->sL(self::LANG_PREFIX .'buildinfo.buildNumber.title'),
+                $this->getLanguageService()->sL(self::LANG_PREFIX .'buildNumber.title'),
                 file_get_contents($buildFile),
                 'actions-debug',
                 InformationStatus::STATUS_INFO
@@ -67,7 +67,7 @@ final class ToolbarItemProvider
             $timestamp = file_get_contents($buildFile);
             $systemInformationToolbarItem = $event->getToolbarItem();
             $systemInformationToolbarItem->addSystemInformation(
-                $this->getLanguageService()->sL(self::LANG_PREFIX .'buildinfo.buildTimestamp.title'),
+                $this->getLanguageService()->sL(self::LANG_PREFIX .'buildTimestamp.title'),
                 $this->formatTimestamp($timestamp),
                 'actions-clock',
                 InformationStatus::STATUS_INFO
@@ -81,7 +81,7 @@ final class ToolbarItemProvider
      */
     private function formatTimestamp(int $timestamp): string
     {
-        return date("d.m.Y H:i", $timestamp) . ' (' . $this->getLanguageService()->sL(self::LANG_PREFIX . 'buildinfo.age.title') . ': ' . $this->secondsToWords((time() - $timestamp)) . ')' ;
+        return date("d.m.Y H:i", $timestamp) . ' (' . $this->getLanguageService()->sL(self::LANG_PREFIX . 'age.title') . ': ' . $this->secondsToWords((time() - $timestamp)) . ')' ;
     }
 
     /**
@@ -96,7 +96,7 @@ final class ToolbarItemProvider
         $langService = $this->getLanguageService();
         $dtF = new \DateTime('@0');
         $dtT = new \DateTime("@$seconds");
-        return $dtF->diff($dtT)->format('%a') . ' ' . $langService->sL(self::LANG_PREFIX . 'buildinfo.days.title') . ', ' . $dtF->diff($dtT)->format('%h') . ' ' . $langService->sL(self::LANG_PREFIX . 'buildinfo.hours.title');
+        return $dtF->diff($dtT)->format('%a') . ' ' . $langService->sL(self::LANG_PREFIX . 'days.title') . ', ' . $dtF->diff($dtT)->format('%h') . ' ' . $langService->sL(self::LANG_PREFIX . 'hours.title');
     }
 
     /**
