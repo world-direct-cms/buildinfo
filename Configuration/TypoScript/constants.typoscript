@@ -1,0 +1,8 @@
+plugin.tx_buildinfo {
+    settings {
+        #cat=basics/a;type=string;label=LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:buildinfo.constants.buildNumberFile
+        buildNumberFile = buildNumber.txt
+        #cat=basics/b;type=string;label=LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:buildinfo.constants.buildTimestampFile
+        buildTimestampFile = buildTimestamp.txt
+    }
+}

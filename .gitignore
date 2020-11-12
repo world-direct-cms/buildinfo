@@ -1,0 +1,4 @@
+# Ignore
+composer.lock
+.Build
+.php_cs.cache

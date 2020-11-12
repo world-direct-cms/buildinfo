@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" target-language="en" datatype="plaintext" original="messages" product-name="buildinfo">
+        <body>
+            <trans-unit id="buildinfo.buildNumber.title"><source>Aktuelle Build Nummer</source><target>Current build number</target></trans-unit>
+            <trans-unit id="buildinfo.buildTimestamp.title"><source>Datum aktueller Build</source><target>Date current build</target></trans-unit>
+            <trans-unit id="buildinfo.age.title"><source>Alter</source><target>Age</target></trans-unit>
+            <trans-unit id="buildinfo.hours.title"><source>Stunden</source><target>hours</target></trans-unit>
+            <trans-unit id="buildinfo.days.title"><source>Tage</source><target>days</target></trans-unit>
+        </body>
+    </file>
+</xliff>

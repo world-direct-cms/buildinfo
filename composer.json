@@ -1,0 +1,47 @@
+{
+    "name": "worlddirect/buildinfo",
+    "type": "typo3-cms-extension",
+    "description": "Contains system information messages for showing informations about the current build.",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Klaus H\u00f6rmann-Engl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5 || ^10.4"
+    },
+    "require-dev": {
+        "captainhook/captainhook": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "WorldDirect\\Buildinfo\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WorldDirect\\Buildinfo\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "worlddirect/buildinfo": "self.version",
+        "typo3-ter/buildinfo": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin",
+        "sort-packages": true
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "buildinfo",
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": ".Build/bin/captainhook install --bootstrap .Build/vendor/autoload.php -f -s"
+    }
+}

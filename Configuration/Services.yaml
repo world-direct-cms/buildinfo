@@ -1,0 +1,19 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  WorldDirect\Buildinfo\:
+    resource: '../Classes/*'
+  
+  WorldDirect\Buildinfo\SystemInformation\ToolbarItemProvider:
+    tags:
+      - name: event.listener
+        identifier: 'buildinfo/show-current-buildnumber'
+        method: 'getBuildNumber'
+        event: TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent
+      - name: event.listener
+        identifier: 'buildinfo/show-current-buildtimestamp'
+        method: 'getBuildDate'
+        event: TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent
