@@ -28,9 +28,8 @@ class BasicUtility
         $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         $configurationManager = $objectManager->get(ConfigurationManager::class);
         $extConf = $configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
-
-        if (isset($extConf[$type . '.'][$detail . '.']['settings']) && is_array($extConf[$type . '.'][$detail . '.']['settings'])) {
-            return $extConf[$type . '.'][$detail . '.']['settings'];
+        if (isset($extConf[$type . '.'][$detail . '.']['settings.']) && is_array($extConf[$type . '.'][$detail . '.']['settings.'])) {
+            return $extConf[$type . '.'][$detail . '.']['settings.'];
         }
         return [];
     }
