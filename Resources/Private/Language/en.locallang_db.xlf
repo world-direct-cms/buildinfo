@@ -2,11 +2,46 @@
 <xliff version="1.0">
     <file source-language="de" target-language="en" datatype="plaintext" original="messages" product-name="buildinfo">
         <body>
-            <trans-unit id="buildinfo.buildNumber.title"><source>Aktuelle Build Nummer</source><target>Current build number</target></trans-unit>
-            <trans-unit id="buildinfo.buildTimestamp.title"><source>Datum aktueller Build</source><target>Date current build</target></trans-unit>
-            <trans-unit id="buildinfo.age.title"><source>Alter</source><target>Age</target></trans-unit>
-            <trans-unit id="buildinfo.hours.title"><source>Stunden</source><target>hours</target></trans-unit>
-            <trans-unit id="buildinfo.days.title"><source>Tage</source><target>days</target></trans-unit>
+            <trans-unit id="buildinfo.constants.title">
+                <source>buildinfo</source>
+                <target>buildinfo</target>
+            </trans-unit>
+            <trans-unit id="buildinfo.constants.buildNumberFile">
+                <source>Build Nummer Datei:Der Dateiname der Datei, welche die aktuelle Build Nummer enthält (relativ zum Projekt Root).</source>
+                <target>Build number file:The name of the file holding the current build number (relativ to the project root).</target>
+            </trans-unit>
+            <trans-unit id="buildinfo.constants.buildTimestampFile">
+                <source>Build Timestap Datei:Der Dateiname der Datei, welche den Timestamp des aktuellen Builds enthält (relativ zum Projekt Root).</source>
+                <target>Build timestamp file:The name of the file, which holds the timestamp of the last build (relativ to the project root).</target>
+            </trans-unit>
+            <trans-unit id="buildinfo.constants.gitVersionFile">
+                <source>Git Version Nummer:Git Versionsnummer des aktuellen Composer TYPO3 Projekts (relativ zum Projekt Root).</source>
+                <target>Git version number:Git version number (tag) of the current composer TYPO3 project (relativ to the project root).</target>
+            </trans-unit>
+            <trans-unit id="buildinfo.buildNumber.title">
+                <source>Aktuelle Build Nummer</source>
+                <target>Current build number</target>
+            </trans-unit>
+            <trans-unit id="buildinfo.buildTimestamp.title">
+                <source>Datum aktueller Build</source>
+                <target>Date current build</target>
+            </trans-unit>
+            <trans-unit id="buildinfo.gitVersion.title">
+                <source>Git Projekt Version</source>
+                <target>Git project version</target>
+            </trans-unit>
+            <trans-unit id="buildinfo.age.title">
+                <source>Alter</source>
+                <target>age</target>
+            </trans-unit>
+            <trans-unit id="buildinfo.hours.title">
+                <source>Stunden</source>
+                <target>hours</target>
+            </trans-unit>
+            <trans-unit id="buildinfo.days.title">
+                <source>Tage</source>
+                <target>days</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

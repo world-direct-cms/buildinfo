@@ -2,13 +2,36 @@
 <xliff version="1.0">
     <file source-language="de" datatype="plaintext" original="messages" product-name="buildinfo">
         <body>
-            <trans-unit id="buildinfo.constants.buildNumberFile"><source>Build Nummer Datei:Der Dateiname der Datei, welche die aktuelle Build Nummer enthält (relativ zum Projekt Root).</source></trans-unit>
-            <trans-unit id="buildinfo.constants.buildTimestampFile"><source>Build Timestap Datei:Der Dateiname der Datei, welche den Timestamp des aktuellen Builds enthält (relativ zum Projekt Root).</source></trans-unit>
-            <trans-unit id="buildinfo.buildNumber.title"><source>Aktuelle Build Nummer</source></trans-unit>
-            <trans-unit id="buildinfo.buildTimestamp.title"><source>Datum aktueller Build</source></trans-unit>
-            <trans-unit id="buildinfo.age.title"><source>Alter</source></trans-unit>
-            <trans-unit id="buildinfo.hours.title"><source>Stunden</source></trans-unit>
-            <trans-unit id="buildinfo.days.title"><source>Tage</source></trans-unit>
+            <trans-unit id="buildinfo.constants.title">
+                <source>buildinfo</source>
+            </trans-unit>
+                <trans-unit id="buildinfo.constants.buildNumberFile">
+            <source>Build Nummer Datei:Der Dateiname der Datei, welche die aktuelle Build Nummer enthält (relativ zum Projekt Root).</source>
+                </trans-unit>
+            <trans-unit id="buildinfo.constants.buildTimestampFile">
+                <source>Build Timestap Datei:Der Dateiname der Datei, welche den Timestamp des aktuellen Builds enthält (relativ zum Projekt Root).</source>
+            </trans-unit>
+            <trans-unit id="buildinfo.constants.gitVersionFile">
+                <source>Git Version Nummer:Git Versionsnummer des aktuellen Composer TYPO3 Projekts (relativ zum Projekt Root).</source>
+            </trans-unit>
+            <trans-unit id="buildinfo.buildNumber.title">
+                <source>Aktuelle Build Nummer</source>
+            </trans-unit>
+            <trans-unit id="buildinfo.buildTimestamp.title">
+                <source>Datum aktueller Build</source>
+            </trans-unit>
+            <trans-unit id="buildinfo.gitVersion.title">
+                <source>Git Projekt Version</source>
+            </trans-unit>
+            <trans-unit id="buildinfo.age.title">
+                <source>Alter</source>
+            </trans-unit>
+            <trans-unit id="buildinfo.hours.title">
+                <source>Stunden</source>
+            </trans-unit>
+            <trans-unit id="buildinfo.days.title">
+            <source>Tage</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

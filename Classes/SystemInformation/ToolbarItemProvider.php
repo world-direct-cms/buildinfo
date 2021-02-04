@@ -2,9 +2,11 @@
 
 namespace WorldDirect\Buildinfo\SystemInformation;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Core\Localization\LanguageService;
+use WorldDirect\Buildinfo\Service\ToolbarService;
 use TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent;
-use TYPO3\CMS\Backend\Toolbar\Enumeration\InformationStatus;
 
 /**
  * ToolbarItemProvider
@@ -16,41 +18,31 @@ use TYPO3\CMS\Backend\Toolbar\Enumeration\InformationStatus;
 final class ToolbarItemProvider
 {
     /**
-     * Constant holding the language prefix
-     */
-    const LANG_PREFIX = 'LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:';
-
-    /**
-     * The project path
+     * Toolbar service
      * 
-     * @var string $projectPath
+     * @var ToolbarService
      */
-    protected $projectPath = '';
+    protected $toolbarService = null;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->projectPath = \TYPO3\CMS\Core\Core\Environment::getProjectPath();
+        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+        $this->toolbarService = $objectManager->get(ToolbarService::class,);
     }
 
     /**
      * Function returns the content for the SystemInformationToolbar
      * 
+     * @param SystemInformationToolbarCollectorEvent $event
+     * 
      * @return void
      */
     public function getBuildNumber(SystemInformationToolbarCollectorEvent $event): void
     {
-        $buildFile = $this->projectPath . '/buildNumber.txt';
-        if (file_exists($buildFile) && !empty($buildFile)) {
-            $event->getToolbarItem()->addSystemInformation(
-                $this->getLanguageService()->sL(self::LANG_PREFIX .'buildinfo.buildNumber.title'),
-                file_get_contents($buildFile),
-                'actions-debug',
-                InformationStatus::STATUS_INFO
-            );
-        }
+        $this->toolbarService->addFileContentToSystemInformation($event, 'buildNumber', 'actions-debug');
     }
 
     /**
@@ -62,50 +54,18 @@ final class ToolbarItemProvider
      */
     public function getBuildDate(SystemInformationToolbarCollectorEvent $event): void
     {
-        $buildFile = $this->projectPath . '/buildTimestamp.txt';
-        if (file_exists($buildFile) && !empty($buildFile)) {
-            $timestamp = file_get_contents($buildFile);
-            $systemInformationToolbarItem = $event->getToolbarItem();
-            $systemInformationToolbarItem->addSystemInformation(
-                $this->getLanguageService()->sL(self::LANG_PREFIX .'buildinfo.buildTimestamp.title'),
-                $this->formatTimestamp($timestamp),
-                'actions-clock',
-                InformationStatus::STATUS_INFO
-            );
-        }
+        $this->toolbarService->addFileContentToSystemInformation($event, 'buildTimestamp', 'actions-clock');
     }
 
     /**
-     * Formats the given unix timestamp to display the date
-     * and the age in days.
-     */
-    private function formatTimestamp(int $timestamp): string
-    {
-        return date("d.m.Y H:i", $timestamp) . ' (' . $this->getLanguageService()->sL(self::LANG_PREFIX . 'buildinfo.age.title') . ': ' . $this->secondsToWords((time() - $timestamp)) . ')' ;
-    }
-
-    /**
-     * Function converts seconds into words.
+     * Function returns the current composer project git version from the repository.
+     * Uses the file "gitVersion.txt" which is genereted by the build projcess in the
+     * Azure devops server, or any other build service.
      * 
-     * @param int $seconds The amount of seconds to convert
-     * 
-     * @return string A string with the duration in days and hours
+     * @return void
      */
-    private function secondsToWords(int $seconds): string
+    public function getGitVersion(SystemInformationToolbarCollectorEvent $event): void
     {
-        $langService = $this->getLanguageService();
-        $dtF = new \DateTime('@0');
-        $dtT = new \DateTime("@$seconds");
-        return $dtF->diff($dtT)->format('%a') . ' ' . $langService->sL(self::LANG_PREFIX . 'buildinfo.days.title') . ', ' . $dtF->diff($dtT)->format('%h') . ' ' . $langService->sL(self::LANG_PREFIX . 'buildinfo.hours.title');
-    }
-
-    /**
-     * Return a language service
-     * 
-     * @return LanguageService
-     */
-    private function getLanguageService(): LanguageService
-    {
-        return $GLOBALS['LANG'];
+        $this->toolbarService->addFileContentToSystemInformation($event, 'gitVersion', 'actions-clock');
     }
 }

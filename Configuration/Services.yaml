@@ -17,3 +17,7 @@ services:
         identifier: 'buildinfo/show-current-buildtimestamp'
         method: 'getBuildDate'
         event: TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent
+      - name: event.listener
+        identifier: 'buildinfo/show-current-gitVersion'
+        method: 'getGitVersion'
+        event: TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent
