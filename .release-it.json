@@ -2,6 +2,13 @@
     "git": {
         "changelog": "git log --pretty=\"- %s\"",
         "requireCleanWorkingDir": false,
-        "commitMessage": "[VERSION] Release version ${version}"
+        "commitMessage": "[VERSION] Release version ${version}",
+        "requireCommits": true
+    },
+    "plugins": {
+        "@release-it/conventional-changelog": {
+          "preset": "",
+          "infile": "CHANGELOG.md"
+        }
     }
 }
