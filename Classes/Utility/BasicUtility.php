@@ -54,9 +54,14 @@ class BasicUtility
      * 
      * @param int $timestamp The timestamp to be formatted
      * @param LanguageService $langService The language service for translations
+     * @param bool $addDuration Whether to add the duration in text or not
      */
-    public static function formatTimestamp(int $timestamp, LanguageService $langService): string
+    public static function formatTimestamp(int $timestamp, LanguageService $langService, bool $addDuration = false): string
     {
-        return date("d.m.Y H:i", $timestamp) . ' (' . $langService->sL(self::LANG_PREFIX . 'buildinfo.age.title') . ': ' . self::secondsToWords((time() - $timestamp), $langService) . ')' ;
+        $date = date("d.m.Y H:i", $timestamp);
+        if ($addDuration) {
+            return $date .  ' (' . $langService->sL(self::LANG_PREFIX . 'buildinfo.age.title') . ': ' . self::secondsToWords((time() - $timestamp), $langService) . ')' ;
+        }
+        return $date;
     }
 }
