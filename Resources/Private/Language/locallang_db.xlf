@@ -15,13 +15,13 @@
                 <source>Git Version Nummer:Git Versionsnummer des aktuellen Composer TYPO3 Projekts (relativ zum Projekt Root).</source>
             </trans-unit>
             <trans-unit id="buildinfo.buildNumber.title">
-                <source>Aktuelle Build Nummer</source>
+                <source>Build Nummer</source>
             </trans-unit>
             <trans-unit id="buildinfo.buildTimestamp.title">
-                <source>Datum aktueller Build</source>
+                <source>Build Datum</source>
             </trans-unit>
             <trans-unit id="buildinfo.gitVersion.title">
-                <source>Git Projekt Version</source>
+                <source>Git Version</source>
             </trans-unit>
             <trans-unit id="buildinfo.age.title">
                 <source>Alter</source>

@@ -19,16 +19,16 @@
                 <target>Git version number:Git version number (tag) of the current composer TYPO3 project (relativ to the project root).</target>
             </trans-unit>
             <trans-unit id="buildinfo.buildNumber.title">
-                <source>Aktuelle Build Nummer</source>
-                <target>Current build number</target>
+                <source>Build Nummer</source>
+                <target>Build number</target>
             </trans-unit>
             <trans-unit id="buildinfo.buildTimestamp.title">
-                <source>Datum aktueller Build</source>
-                <target>Date current build</target>
+                <source>Build Datum</source>
+                <target>Build date</target>
             </trans-unit>
             <trans-unit id="buildinfo.gitVersion.title">
-                <source>Git Projekt Version</source>
-                <target>Git project version</target>
+                <source>Git Version</source>
+                <target>Git version</target>
             </trans-unit>
             <trans-unit id="buildinfo.age.title">
                 <source>Alter</source>
