@@ -1,0 +1,7 @@
+{
+    "git": {
+        "changelog": "git log --pretty=\"- %s\"",
+        "requireCleanWorkingDir": false,
+        "commitMessage": "[VERSION] Release version ${version}"
+    }
+}
