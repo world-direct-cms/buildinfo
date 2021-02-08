@@ -66,6 +66,6 @@ final class ToolbarItemProvider
      */
     public function getGitVersion(SystemInformationToolbarCollectorEvent $event): void
     {
-        $this->toolbarService->addFileContentToSystemInformation($event, 'gitVersion', 'actions-clock');
+        $this->toolbarService->addFileContentToSystemInformation($event, 'gitVersion', 'actions-git');
     }
 }
