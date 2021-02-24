@@ -1,0 +1,10 @@
+includes:
+    - ./.Build/vendor/saschaegerer/phpstan-typo3/extension.neon
+parameters:
+    level: 8
+    paths: 
+        - Classes
+    excludes_analyse:
+      - 'ext_emconf.php'
+      - 'ext_localconf.php'
+      - 'ext_tables.php'
