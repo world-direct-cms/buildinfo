@@ -27,7 +27,10 @@
                     \TYPO3\CMS\Core\Resource\ResourceFactory,
                     \TYPO3\CMS\Extbase\Utility\DebuggerUtility,
                     \TYPO3\CMS\Extbase\Utility\LocalizationUtility,
-                    \TYPO3\CMS\Saltedpasswords\Salt\SaltFactory
+                    \TYPO3\CMS\Saltedpasswords\Salt\SaltFactory,
+                    \TYPO3\CMS\Core\Core\Environment,
+                    Environment,
+                    \WorldDirect\Buildinfo\Utility\BasicUtility
                 </value>
             </property>
         </properties>
