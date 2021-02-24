@@ -1,14 +1,16 @@
 {
     "git": {
-        "changelog": "git log --pretty=\"- %s\"",
-        "requireCleanWorkingDir": false,
-        "commitMessage": "[VERSION] Release version ${version}",
-        "requireCommits": true
+        "commitMessage": "[VERSION] Release version ${version}"
     },
     "plugins": {
-        "@release-it/conventional-changelog": {
-          "preset": "",
-          "infile": "CHANGELOG.md"
+        "/srv/www/cms/release-it-versioning/index.js": {
+            "files": {
+                "ext_emconf.php": {
+                    "type": "regex",
+                    "regex": "'version'.=>.'([0-9]+.[0-9]+.*)'"
+                }
+            },
+            "generateChangelog": true
         }
     }
 }
