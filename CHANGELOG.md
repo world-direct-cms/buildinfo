@@ -1,3 +1,7 @@
+### **[0.5.1](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo?version=GT0.5.1)** - 24.01.2021  
+  
+- `24.01.2021 17:06`&nbsp;-&nbsp;[`331373c`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/331373cd68c77f5004e75245a48fca4004da60c3)&nbsp;-&nbsp;[REFACTOR] Code adaptions due to phpmd, phpcs, etc  
+- `24.01.2021 17:05`&nbsp;-&nbsp;[`98fafcb`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/98fafcb5a483261b32a368e198e71b8a9f9444a2)&nbsp;-&nbsp;[TASK] Adapt phpmd config for static TYPO3 classes  
 ## **[0.5.0](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo?version=GT0.5.0)** - 24.01.2021  
   
 - `24.01.2021 16:14`&nbsp;-&nbsp;[`bbcc0e9`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/bbcc0e983f38fd0f479d07728ab36bbb1b9dea03)&nbsp;-&nbsp;[TASK] Add dev scripts  
@@ -11,4 +15,5 @@
 - `24.01.2021 16:12`&nbsp;-&nbsp;[`c06f7fa`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/c06f7fa5675def6b2f9ebd8639fbb502bb66c1a2)&nbsp;-&nbsp;[DOC] Add basic readme file  
 - `24.01.2021 16:12`&nbsp;-&nbsp;[`bc6a085`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/bc6a085aa015a2312afa17918f5a71b9cdf4b764)&nbsp;-&nbsp;[TASK] Add dev dependencies  
 - `24.01.2021 16:10`&nbsp;-&nbsp;[`00614f3`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/00614f3c32141d35e7dd7346475990780ab7f4ac)&nbsp;-&nbsp;[TASK] Adapt gitingore  
+  
   
