@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="World-Direct Standard" xsi:noNamespaceSchemaLocation="phpcs.xsd">
+    
+    <description>A custom codeing standard for WorldDirect TYPO3 extensions.</description>
+
+    <!-- Include only files in classes -->
+    <file>./Classes/</file>
+
+    <!-- Exclude all files in ".Build" folder of extensions 
+    <exclude-pattern>./.Build/*\.(php|inc|css|js)$</exclude-pattern>
+    <exclude-pattern>./Configuration/*\.*$</exclude-pattern>-->
+
+    <!-- Exclude External JS files in extensions 
+    <exclude-pattern>./Resources/Public/Javascript/External/*\.(js)$</exclude-pattern>-->
+
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <arg name="parallel" value="75"/>
+    <arg value="np"/>
+
+    <!-- Don't hide tokenizer exceptions -->
+    <rule ref="Internal.Tokenizer.Exception">
+        <type>error</type>
+    </rule>
+
+    <!-- Include the whole PEAR standard -->
+    <rule ref="PEAR">
+        <exclude name="PEAR.NamingConventions.ValidFunctionName"/>
+        <exclude name="PEAR.NamingConventions.ValidVariableName"/>
+        <exclude name="PEAR.Commenting.ClassComment"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingLinkTag"/>
+        <exclude name="PEAR.Commenting.FileComment.MissingVersion"/>
+        <exclude name="PEAR.Commenting.InlineComment"/>
+
+        <!-- KHO excluded -->
+        <exclude name="PEAR.Commenting.FileComment.Missing"/> <!-- Demands a docblock at the beginning of the file with @author, ... -->
+        <exclude name="PEAR.Commenting.FunctionComment.SpacingAfterParamName"/> <!-- Demands spaces after the param name ? -->
+        <exclude name="PEAR.Commenting.FunctionComment.SpacingAfterParamType"/> <!-- Demands spaces after the param type ?-->
+        <exclude name="PEAR.Functions.ValidDefaultValue.NotAtEnd"/> <!-- Demands the args with default values at the end -->
+        <exclude name="PEAR.WhiteSpace.ScopeIndent.IncorrectExact"/> <!-- Whitespace indendation not relevant for php codesniffer -->
+    </rule>
+
+    <!-- Include some sniffs from other standards that don't conflict with PEAR -->
+    <!-- KHO excluded 
+    <rule ref="Squiz.Commenting.BlockComment"/>
+    <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+    <rule ref="Squiz.Commenting.EmptyCatchComment"/>
+    <rule ref="Squiz.Commenting.InlineComment"/>
+    <rule ref="Squiz.Commenting.LongConditionClosingComment"/>
+    <rule ref="Squiz.Commenting.PostStatementComment"/>
+    <rule ref="Squiz.Commenting.VariableComment"/>
+    <rule ref="Generic.Commenting.Todo"/> -->
+
+    <!-- KHO remove 
+    <rule ref="Squiz.Commenting.ClosingDeclarationComment"/> -->
+
+</ruleset>
