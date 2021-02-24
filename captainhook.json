@@ -13,7 +13,7 @@
             {
                 "action": "\\CaptainHook\\App\\Hook\\File\\Action\\DoesNotContainRegex",
                 "options": {
-                  "regex": "#var_dump#i",
+                  "regex": "#debug(|var_dump(#i",
                   "fileExtensions": [
                     "inc",
                     "php"
@@ -23,18 +23,9 @@
             {
                 "action": "\\CaptainHook\\App\\Hook\\File\\Action\\DoesNotContainRegex",
                 "options": {
-                  "regex": "#debug#i",
+                  "regex": "#debug(#i",
                   "fileExtensions": [
                     "html"
-                  ]
-                }
-            },
-            {
-                "action": "\\CaptainHook\\App\\Hook\\File\\Action\\DoesNotContainRegex",
-                "options": {
-                  "regex": "#log#i",
-                  "fileExtensions": [
-                    "js"
                   ]
                 }
             }
