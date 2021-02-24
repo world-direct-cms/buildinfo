@@ -2,11 +2,11 @@
 
 namespace WorldDirect\Buildinfo\Utility;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Core\Localization\LanguageService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 class BasicUtility
 {
@@ -14,7 +14,7 @@ class BasicUtility
      * Constant holding the language prefix
      */
     const LANG_PREFIX = 'LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:';
-    
+
     /**
      * Method returns the TypoScript configuration for a plugin or a module.
      *
@@ -36,9 +36,10 @@ class BasicUtility
 
     /**
      * Function converts seconds into words.
-     * 
+     *
      * @param int $seconds The amount of seconds to convert
-     * 
+     * @param LanguageService $langService The language Service for getting text elements
+     *
      * @return string A string with the duration in days and hours
      */
     public static function secondsToWords(int $seconds, LanguageService $langService): string
@@ -51,16 +52,18 @@ class BasicUtility
     /**
      * Formats the given unix timestamp to display the date
      * and the age in days.
-     * 
+     *
      * @param int $timestamp The timestamp to be formatted
      * @param LanguageService $langService The language service for translations
      * @param bool $addDuration Whether to add the duration in text or not
+     *
+     * @return string
      */
     public static function formatTimestamp(int $timestamp, LanguageService $langService, bool $addDuration = false): string
     {
-        $date = date("d.m.Y H:i", $timestamp);
+        $date = date('d.m.Y H:i', $timestamp);
         if ($addDuration) {
-            return $date .  ' (' . $langService->sL(self::LANG_PREFIX . 'buildinfo.age.title') . ': ' . self::secondsToWords((time() - $timestamp), $langService) . ')' ;
+            return $date . ' (' . $langService->sL(self::LANG_PREFIX . 'buildinfo.age.title') . ': ' . self::secondsToWords((time() - $timestamp), $langService) . ')';
         }
         return $date;
     }
