@@ -1,3 +1,6 @@
+### **[0.5.3](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo?version=GT0.5.3)** - 25.01.2021  
+  
+- `25.01.2021 16:39`&nbsp;-&nbsp;[`f8a0c9f`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/f8a0c9f2651cfab61a2d8d6405ef39a73ddeae70)&nbsp;-&nbsp;[BUGFIX] Fix bug in reading a file  
 ### **[0.5.2](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo?version=GT0.5.2)** - 25.01.2021  
   
 - `25.01.2021 16:05`&nbsp;-&nbsp;[`64caca2`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/64caca2fe1711997cac0223f3dfcac61d02a3d23)&nbsp;-&nbsp;[REFACTOR] Adapt scripts  
@@ -21,6 +24,7 @@
 - `24.01.2021 16:12`&nbsp;-&nbsp;[`c06f7fa`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/c06f7fa5675def6b2f9ebd8639fbb502bb66c1a2)&nbsp;-&nbsp;[DOC] Add basic readme file  
 - `24.01.2021 16:12`&nbsp;-&nbsp;[`bc6a085`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/bc6a085aa015a2312afa17918f5a71b9cdf4b764)&nbsp;-&nbsp;[TASK] Add dev dependencies  
 - `24.01.2021 16:10`&nbsp;-&nbsp;[`00614f3`](https://ads.world-direct.at/DefaultCollection/CMS/_git/t3ext.buildinfo/commit/00614f3c32141d35e7dd7346475990780ab7f4ac)&nbsp;-&nbsp;[TASK] Adapt gitingore  
+  
   
   
   
