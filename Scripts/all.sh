@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Execute 4 tools
+# Execute tools
 
 ./phpcs.sh
 ./phpmd.sh
