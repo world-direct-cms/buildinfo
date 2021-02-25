@@ -17,6 +17,8 @@ class ToolbarService
 
     /**
      * Extension configuration
+     *
+     * @var array<string>
      */
     protected $extConf = null;
 
@@ -26,6 +28,13 @@ class ToolbarService
      * @var LanguageService
      */
     protected $languageService = null;
+
+    /**
+     * The project path
+     *
+     * @var string
+     */
+    protected $projectPath = '';
 
     /**
      * Constructor for new ToolbarService objects
