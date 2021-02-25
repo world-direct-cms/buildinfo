@@ -86,7 +86,12 @@ class ToolbarService
     {
         switch ($type) {
             case 'buildTimestamp':
-                return BasicUtility::formatTimestamp(file_get_contents($file), $this->languageService);
+                $timestamp = '';
+                $fileContent = file_get_contents($file);
+                if ($fileContent) {
+                    $timestamp = $fileContent;
+                }
+                return BasicUtility::formatTimestamp($timestamp, $this->languageService);
             default:
                 return file_get_contents($file);
         }

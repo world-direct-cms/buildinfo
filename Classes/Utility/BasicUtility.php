@@ -53,13 +53,13 @@ class BasicUtility
      * Formats the given unix timestamp to display the date
      * and the age in days.
      *
-     * @param mixed $timestamp The timestamp to be formatted
+     * @param string $timestamp The timestamp to be formatted
      * @param LanguageService $langService The language service for translations
      * @param bool $addDuration Whether to add the duration in text or not
      *
      * @return string
      */
-    public static function formatTimestamp(mixed $timestamp, LanguageService $langService, bool $addDuration = false): string
+    public static function formatTimestamp(string $timestamp, LanguageService $langService, bool $addDuration = false): string
     {
         if ($timestamp) {
             $date = date('d.m.Y H:i', $timestamp);
