@@ -1,6 +1,5 @@
 # Ignore
 composer.lock
 .Build
-Reports
 .php_cs.cache
 var
