@@ -13,13 +13,17 @@
     "authors": [
         {
             "name": "Klaus H\u00f6rmann-Engl",
-            "role": "Developer",
+            "email": "klaus.hoermann-engl@world-direct.at",
             "homepage": "https://www.world-direct.at",
-            "email": "klaus.hoermann-engl@world-direct.at"
+            "role": "Developer"
         }
     ],
     "require": {
         "typo3/cms-core": "^9.5 || ^10.4"
+    },
+    "replace": {
+        "typo3-ter/buildinfo": "self.version",
+        "worlddirect/buildinfo": "self.version"
     },
     "require-dev": {
         "captainhook/captainhook": "^5.4",
@@ -30,6 +34,18 @@
         "saschaegerer/phpstan-typo3": "^0.13.1",
         "squizlabs/php_codesniffer": "^3.5"
     },
+    "config": {
+        "bin-dir": ".Build/bin",
+        "sort-packages": true,
+        "vendor-dir": ".Build/vendor"
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "extension-key": "buildinfo",
+            "web-dir": ".Build/Web"
+        }
+    },
     "autoload": {
         "psr-4": {
             "WorldDirect\\Buildinfo\\": "Classes"
@@ -38,22 +54,6 @@
     "autoload-dev": {
         "psr-4": {
             "WorldDirect\\Buildinfo\\Tests\\": "Tests"
-        }
-    },
-    "replace": {
-        "worlddirect/buildinfo": "self.version",
-        "typo3-ter/buildinfo": "self.version"
-    },
-    "config": {
-        "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin",
-        "sort-packages": true
-    },
-    "extra": {
-        "typo3/cms": {
-            "extension-key": "buildinfo",
-            "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "web-dir": ".Build/Web"
         }
     },
     "scripts": {
