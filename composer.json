@@ -2,11 +2,20 @@
     "name": "worlddirect/buildinfo",
     "type": "typo3-cms-extension",
     "description": "Contains system information messages for showing informations about the current build.",
+    "keywords": [
+        "typo3",
+        "build",
+        "docker",
+        "versioning",
+        "info"
+    ],
     "license": "GPL-2.0-only",
     "authors": [
         {
             "name": "Klaus H\u00f6rmann-Engl",
-            "role": "Developer"
+            "role": "Developer",
+            "homepage": "https://www.world-direct.at",
+            "email": "klaus.hoermann-engl@world-direct.at"
         }
     ],
     "require": {
