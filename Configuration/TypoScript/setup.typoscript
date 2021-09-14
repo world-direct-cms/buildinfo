@@ -1,4 +1,4 @@
-plugin.tx_buildinfo  {
+plugin.tx_buildinfo {
     settings {
         buildNumberFile = {$plugin.tx_buildinfo.settings.buildNumberFile}
         buildTimestampFile = {$plugin.tx_buildinfo.settings.buildTimestampFile}
