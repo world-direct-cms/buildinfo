@@ -23,6 +23,7 @@
     },
     "require-dev": {
         "captainhook/captainhook": "^5.4",
+        "ergebnis/composer-normalize": "^2.15",
         "michielroos/typo3scan": "^1.7",
         "phpmd/phpmd": "^2.9",
         "phpstan/phpstan": "^0.12.78",
