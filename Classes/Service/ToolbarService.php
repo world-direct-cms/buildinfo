@@ -2,6 +2,7 @@
 
 namespace WorldDirect\Buildinfo\Service;
 
+use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent;
 use TYPO3\CMS\Backend\Toolbar\Enumeration\InformationStatus;
 use TYPO3\CMS\Core\Core\Environment;
@@ -91,9 +92,14 @@ class ToolbarService
                 if ($fileContent) {
                     $timestamp = $fileContent;
                 }
-                return BasicUtility::formatTimestamp($timestamp, $this->languageService);
+                return BasicUtility::formatTimestamp(intval($timestamp), $this->languageService);
             default:
-                return file_get_contents($file);
+                $fileContent = file_get_contents($file);
+                if ($fileContent) {
+                    return $fileContent;
+                } else {
+                    throw new FileNotFoundException();
+                }
         }
     }
 }
