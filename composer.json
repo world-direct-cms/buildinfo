@@ -93,7 +93,11 @@
             ".Build/tools/phpcs -s"
         ],
         "ci:php:stan": [
+            "@ci:php:stan:clearcache",
             ".Build/bin/phpstan analyze -c .phpstan.neon"
+        ],
+        "ci:php:stan:clearcache": [
+            ".Build/bin/phpstan clear-result-cache"
         ],
         "ci:static": [
             "@ci:composer:normalize",
@@ -101,9 +105,9 @@
             "@ci:php:copypaste",
             "@ci:php:lint",
             "@ci:php:sniff",
-            "@ci:php:stan",
             "@ci:ts:lint",
-            "@ci:yaml:lint"
+            "@ci:yaml:lint",
+            "@ci:php:stan"
         ],
         "ci:ts:lint": [
             ".Build/tools/typoscript-lint -c .typoscript-lint.yml"
