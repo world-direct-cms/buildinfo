@@ -31,6 +31,14 @@
             }
         ]
     },
+    "pre-push": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "composer ci"
+            }
+        ]
+    },
     "commit-msg": {
         "enabled": true,
         "actions": [
