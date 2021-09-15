@@ -9,25 +9,6 @@
                 "action": "\\CaptainHook\\App\\Hook\\PHP\\Action\\Linting",
                 "options": [],
                 "conditions": []
-            },
-            {
-                "action": "\\CaptainHook\\App\\Hook\\File\\Action\\DoesNotContainRegex",
-                "options": {
-                    "regex": "#debug(|var_dump(#i",
-                    "fileExtensions": [
-                        "inc",
-                        "php"
-                    ]
-                }
-            },
-            {
-                "action": "\\CaptainHook\\App\\Hook\\File\\Action\\DoesNotContainRegex",
-                "options": {
-                    "regex": "#debug(#i",
-                    "fileExtensions": [
-                        "html"
-                    ]
-                }
             }
         ]
     },
