@@ -2,6 +2,8 @@ includes:
     - ./.Build/vendor/saschaegerer/phpstan-typo3/extension.neon
 parameters:
     level: 8
+    bootstrapFiles:
+        - .Build/vendor/autoload.php
     parallel:
         maximumNumberOfProcesses: 3
     paths: 
