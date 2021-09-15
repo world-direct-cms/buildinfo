@@ -28,9 +28,6 @@
                         "html"
                     ]
                 }
-            },
-            {
-                "action": "composer ci"
             }
         ]
     },
