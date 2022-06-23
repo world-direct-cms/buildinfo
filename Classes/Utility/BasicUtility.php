@@ -18,12 +18,12 @@ class BasicUtility
     /**
      * Method returns the TypoScript configuration for a plugin or a module.
      *
-     * @param string $type   Wheter it is a plugin or a module
      * @param string $detail The name of the plugin or module
+     * @param string $type   Wheter it is a plugin or a module
      *
      * @return array<string> The settings array
      */
-    public static function getConfiguration(string $type = 'plugin', string $detail): array
+    public static function getConfiguration(string $detail, string $type = 'plugin'): array
     {
         $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         $configurationManager = $objectManager->get(ConfigurationManager::class);
