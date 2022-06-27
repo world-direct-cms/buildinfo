@@ -43,7 +43,7 @@ class ToolbarService
     public function __construct()
     {
         $this->languageService = $GLOBALS['LANG'];
-        $this->extConf = BasicUtility::getConfiguration('plugin', 'tx_buildinfo');
+        $this->extConf = BasicUtility::getConfiguration('tx_buildinfo');
         $this->projectPath = Environment::getProjectPath() . '/';
     }
 
