@@ -14,6 +14,8 @@ The extension comes with Typoscript settings to configure the names of the 3 fil
 - Build timestamp: **buildTimestamp.txt**
 - Git version: **gitVersion.txt**
 
+If a file is not present, no information is shown in the information toolbar.
+
 Screenshots
 ^^^^^^^^^^^
 .. figure:: Resources/Public/Screenshots/buildinfo-screenshot-01.png
