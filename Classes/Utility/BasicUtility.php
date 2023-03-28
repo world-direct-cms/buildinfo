@@ -6,7 +6,6 @@ use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 class BasicUtility
 {
@@ -25,8 +24,8 @@ class BasicUtility
      */
     public static function getConfiguration(string $detail, string $type = 'plugin'): array
     {
-        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        $configurationManager = $objectManager->get(ConfigurationManager::class);
+        /** @var ConfigurationManager $configurationManager */
+        $configurationManager = GeneralUtility::makeInstance(ConfigurationManager::class);
         $extConf = $configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
         if (isset($extConf[$type . '.'][$detail . '.']['settings.']) && is_array($extConf[$type . '.'][$detail . '.']['settings.'])) {
             return $extConf[$type . '.'][$detail . '.']['settings.'];

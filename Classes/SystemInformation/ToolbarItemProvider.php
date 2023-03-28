@@ -4,7 +4,6 @@ namespace WorldDirect\Buildinfo\SystemInformation;
 
 use TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use WorldDirect\Buildinfo\Service\ToolbarService;
 
 /**
@@ -21,15 +20,14 @@ final class ToolbarItemProvider
      *
      * @var ToolbarService
      */
-    protected $toolbarService = null;
+    protected $toolbarService;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        $this->toolbarService = $objectManager->get(ToolbarService::class);
+        $this->toolbarService = GeneralUtility::makeInstance(ToolbarService::class);
     }
 
     /**
