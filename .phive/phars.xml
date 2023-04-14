@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phive xmlns="https://phar.io/phive">
-  <phar name="phpcpd" version="^6.0.3" installed="6.0.3" location="./.Build/tools/phpcpd" copy="true"/>
-  <phar name="martin-helmich/typo3-typoscript-lint" version="^2.4.1" installed="2.4.1" location="./.Build/tools/typoscript-lint" copy="true"/>
-  <phar name="phpcs" version="^3.5.8" installed="3.5.8" location="./.Build/tools/phpcs" copy="true"/>
-</phive>
