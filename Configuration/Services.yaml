@@ -21,3 +21,6 @@ services:
         identifier: 'buildinfo/show-current-gitVersion'
         method: 'getGitVersion'
         event: TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent
+  # Needed for DI to work in this class
+  WorldDirect\Buildinfo\Service\ToolbarService:
+    public: true
