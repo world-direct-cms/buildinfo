@@ -1,11 +1,13 @@
 # customcategory=buildinfo=LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:buildinfo.constants.title
-plugin.tx_buildinfo {
-    settings {
-        #cat=buildInfo/a;type=string;label=LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:buildinfo.constants.buildNumberFile
-        buildNumberFile = buildNumber.txt
-        #cat=buildInfo/b;type=string;label=LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:buildinfo.constants.buildTimestampFile
-        buildTimestampFile = buildTimestamp.txt
-        #cat=buildInfo/c;type=string;label=LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:buildinfo.constants.gitVersionFile
-        gitVersionFile = gitVersion.txt
+plugin {
+    tx_buildinfo {
+        settings {
+            #cat=buildInfo/a;type=string;label=LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:buildinfo.constants.buildNumberFile
+            buildNumberFile = buildNumber.txt
+            #cat=buildInfo/b;type=string;label=LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:buildinfo.constants.buildTimestampFile
+            buildTimestampFile = buildTimestamp.txt
+            #cat=buildInfo/c;type=string;label=LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:buildinfo.constants.gitVersionFile
+            gitVersionFile = gitVersion.txt
+        }
     }
 }
