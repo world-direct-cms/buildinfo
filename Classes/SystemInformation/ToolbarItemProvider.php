@@ -6,12 +6,25 @@ use TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use WorldDirect\Buildinfo\Service\ToolbarService;
 
+/*
+ * This file is part of the TYPO3 extension "worlddirect/buildinfo".
+ *
+ * (c) Klaus Hörmann-Engl <klaus.hoermann-engl@world-direct.at>
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
 /**
  * ToolbarItemProvider
  *
  * Provides 2 methods to get the "buildNumber" and the "buildTimestamp"
  *
  * @author Klaus Hörmann-Engl <kho@world-direct.at>
+ * @package WorldDirect\Buildinfo\SystemInformation
  */
 final class ToolbarItemProvider
 {
