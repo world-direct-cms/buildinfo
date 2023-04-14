@@ -1,7 +1,8 @@
 {
     "name": "worlddirect/buildinfo",
-    "type": "typo3-cms-extension",
     "description": "Contains system information messages for showing informations about the current build.",
+    "license": "GPL-2.0-only",
+    "type": "typo3-cms-extension",
     "keywords": [
         "typo3",
         "build",
@@ -9,43 +10,35 @@
         "versioning",
         "info"
     ],
-    "license": "GPL-2.0-only",
     "authors": [
         {
-            "name": "Klaus H\u00f6rmann-Engl",
-            "email": "klaus.hoermann-engl@world-direct.at",
+            "name": "Klaus Hörmann-Engl",
+            "email": "kho@world-direct.at",
             "homepage": "https://www.world-direct.at",
             "role": "Developer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/world-direct/buildinfo/issues/",
+        "source": "https://github.com/world-direct/buildinfo/"
+    },
     "require": {
         "typo3/cms-backend": "^11.5 || ^12",
         "typo3/cms-core": "^11.5 || ^12"
     },
-    "replace": {
-        "typo3-ter/buildinfo": "self.version"
-    },
     "require-dev": {
         "captainhook/captainhook": "^5.4",
         "ergebnis/composer-normalize": "^2.15",
-        "michielroos/typo3scan": "^1.7",
+        "friendsofphp/php-cs-fixer": "^3.16",
+        "helmich/typo3-typoscript-lint": "^3.1",
         "phpmd/phpmd": "^2.9",
-        "phpstan/phpstan": "^0.12.78",
-        "saschaegerer/phpstan-typo3": "^0.13.1",
+        "phpstan/phpstan": "^1.10",
+        "saschaegerer/phpstan-typo3": "^1.8",
         "seld/jsonlint": "^1.8",
         "squizlabs/php_codesniffer": "^3.5"
     },
-    "config": {
-        "bin-dir": ".Build/bin",
-        "sort-packages": true,
-        "vendor-dir": ".Build/vendor"
-    },
-    "extra": {
-        "typo3/cms": {
-            "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "extension-key": "buildinfo",
-            "web-dir": ".Build/Web"
-        }
+    "replace": {
+        "typo3-ter/buildinfo": "self.version"
     },
     "autoload": {
         "psr-4": {
@@ -57,76 +50,58 @@
             "WorldDirect\\Buildinfo\\Tests\\": "Tests"
         }
     },
+    "config": {
+        "allow-plugins": {
+            "typo3/cms-composer-installers": true,
+            "typo3/class-alias-loader": true,
+            "ergebnis/composer-normalize": true
+        },
+        "bin-dir": ".Build/bin",
+        "sort-packages": true,
+        "vendor-dir": ".Build/vendor"
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "extension-key": "buildinfo",
+            "web-dir": ".Build/Web"
+        }
+    },
     "scripts": {
-        "post-autoload-dump": [
+        "post-install-cmd": [
             ".Build/bin/captainhook install --bootstrap .Build/vendor/autoload.php -f -s"
         ],
-        "ci": [
-            "@ci:static"
-        ],
-        "ci:composer:normalize": [
-            "@composer normalize --dry-run"
-        ],
-        "ci:json:lint": [
+        "json:lint": [
             "find . ! -path '*.Build/*' -name '*.json' | xargs .Build/bin/jsonlint"
         ],
-        "ci:lint": [
-            "@ci:json:lint",
-            "@ci:php:lint",
-            "@ci:ts:lint",
-            "@ci:yaml:lint"
+        "lint": [
+            "@php:lint",
+            "@json:lint",
+            "@ts:lint",
+            "@yaml:lint"
         ],
-        "ci:php": [
-            "@ci:php:copypaste",
-            "@ci:php:lint",
-            "@ci:php:sniff",
-            "@ci:php:stan"
+        "php:lint": [
+            "find *.php Classes -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l"
         ],
-        "ci:php:copypaste": [
-            ".Build/tools/phpcpd Classes Configuation Tests"
+        "php:md": [
+            ".Build/bin/phpmd ./Classes/ ansi .phpmd.xml"
         ],
-        "ci:php:lint": [
-            "find *.php Classes Configuration Tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l"
+        "php:stan": [
+            ".Build/bin/phpstan analyze -c .phpstan.neon Classes"
         ],
-        "ci:php:sniff": [
-            ".Build/tools/phpcs -s"
+        "ts:lint": [
+            ".Build/bin/typoscript-lint"
         ],
-        "ci:php:stan": [
-            "@ci:php:stan:clearcache",
-            ".Build/bin/phpstan analyze -c .phpstan.neon"
-        ],
-        "ci:php:stan:clearcache": [
-            ".Build/bin/phpstan clear-result-cache"
-        ],
-        "ci:static": [
-            "@ci:composer:normalize",
-            "@ci:json:lint",
-            "@ci:php:copypaste",
-            "@ci:php:lint",
-            "@ci:php:sniff",
-            "@ci:ts:lint",
-            "@ci:yaml:lint",
-            "@ci:php:stan"
-        ],
-        "ci:ts:lint": [
-            ".Build/tools/typoscript-lint -c .typoscript-lint.yml"
-        ],
-        "ci:yaml:lint": [
+        "yaml:lint": [
             "find . ! -path '*.Build/*' -name '*.yaml' | xargs .Build/bin/yaml-lint"
         ]
     },
     "scripts-descriptions": {
-        "ci": "Runs all code checks",
-        "ci:composer:normalize": "Normalize the composer.json file",
-        "ci:json:lint": "Lint JSON files",
-        "ci:lint": "Runs all linter checks for TypoScript, Yaml, JSON and PHP",
-        "ci:php": "Run all php scripts",
-        "ci:php:copypaste": "Run the PHP copy paste detector",
-        "ci:php:lint": "Lint PHP files",
-        "ci:php:sniff": "Run the PHP Code Sniffer",
-        "ci:php:stan": "Run the PHP Static Code Analysis",
-        "ci:static": "Run all static code checks (syntax, style, types, ...)",
-        "ci:ts:lint": "Lint TypoScript files",
-        "ci:yaml:lint": "Lint YAML files"
+        "json:lint": "Lint the JSON files",
+        "php:lint": "Lint PHP files",
+        "php:md": "Execute PHP Mess Detector",
+        "php:stan": "Run the PHP Static Code Analysis",
+        "ts:lint": "Lint TypoScript files",
+        "yaml:lint": "Lint YAML files"
     }
 }
