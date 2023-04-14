@@ -92,7 +92,7 @@ class ToolbarService
                 if ($fileContent) {
                     $timestamp = $fileContent;
                 }
-                return BasicUtility::formatTimestamp(intval($timestamp), $this->languageService);
+                return BasicUtility::formatTimestamp(intval($timestamp));
             default:
                 $fileContent = file_get_contents($file);
                 if ($fileContent) {

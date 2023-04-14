@@ -53,18 +53,13 @@ class BasicUtility
      * and the age in days.
      *
      * @param int $timestamp The timestamp to be formatted
-     * @param LanguageService $langService The language service for translations
-     * @param bool $addDuration Whether to add the duration in text or not
      *
      * @return string
      */
-    public static function formatTimestamp(int $timestamp, LanguageService $langService, bool $addDuration = false): string
+    public static function formatTimestamp(int $timestamp): string
     {
         if ($timestamp) {
             $date = date('d.m.Y H:i', $timestamp);
-            if ($addDuration) {
-                return $date . ' (' . $langService->sL(self::LANG_PREFIX . 'buildinfo.age.title') . ': ' . self::secondsToWords(intval((time() - $timestamp)), $langService) . ')';
-            }
             return $date;
         }
         return '';
