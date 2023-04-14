@@ -18,10 +18,7 @@
                 }
             },
             {
-                "action": "composer php:stan"
-            },
-            {
-                "action": "composer lint"
+                "action": "composer git:pre-commit"
             }
         ]
     },

@@ -6,11 +6,15 @@
         }
     ],
     "settings": {
-        // PHPSTAN
+        
+        // PHPstan
         "phpstan.configFile": ".phpstan.neon",
         "phpstan.binPath": ".Build/bin/phpstan",
+
+        // PHPmd
+        "phpmd.rules": ".phpmd.xml",
     
-        // INTELEPHENSE
+        // Intelephense
         "intelephense.files.exclude": [
             "**/.git/**",
             "**/.svn/**",
@@ -36,7 +40,7 @@
             ]
         },
 
-        // Todo tree extension
+        // Todo tree
         "todo-tree.highlights.customHighlight": {
             "TODO": {
                 "foreground": "#333333",
