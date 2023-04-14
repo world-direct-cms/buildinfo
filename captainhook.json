@@ -9,14 +9,19 @@
                 "action": "\\CaptainHook\\App\\Hook\\PHP\\Action\\Linting",
                 "options": [],
                 "conditions": []
-            }
-        ]
-    },
-    "pre-push": {
-        "enabled": true,
-        "actions": [
+            },
             {
-                "action": "composer ci"
+                "action": "\\CaptainHook\\App\\Hook\\File\\Action\\DoesNotContainRegex",
+                "options": {
+                    "regex": "/f\\:debug/im",
+                    "fileExtensions": ["html"]
+                }
+            },
+            {
+                "action": "composer php:stan"
+            },
+            {
+                "action": "composer lint"
             }
         ]
     },
@@ -24,17 +29,9 @@
         "enabled": true,
         "actions": [
             {
-                "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Beams",
-                "options": {
-                    "subjectLength": 50,
-                    "bodyLineLength": 72
-                },
-                "conditions": []
-            },
-            {
                 "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Regex",
                 "options": {
-                    "regex": "/^[\\[][A-Z]*[\\]] [a-zA-Z0-9-. ]*/m"
+                    "regex": "/^(feat|fix|task|refactor|docs|chore)\\: [a-zA-Z0-9\\-\\. ]+/m"
                 }
             }
         ]
