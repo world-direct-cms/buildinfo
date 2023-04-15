@@ -27,16 +27,15 @@
         "typo3/cms-core": "^11.5 || ^12"
     },
     "require-dev": {
-        "captainhook/captainhook": "^5.4",
-        "ergebnis/composer-normalize": "^2.15",
+        "captainhook/captainhook": "^5.16",
+        "ergebnis/composer-normalize": "^2.30",
         "friendsofphp/php-cs-fixer": "^3.16",
         "helmich/typo3-typoscript-lint": "^3.1",
         "michielroos/typo3scan": "^1.7",
         "phpmd/phpmd": "^2.9",
         "phpstan/phpstan": "^1.10",
         "saschaegerer/phpstan-typo3": "^1.8",
-        "seld/jsonlint": "^1.8",
-        "squizlabs/php_codesniffer": "^3.5"
+        "seld/jsonlint": "^1.8"
     },
     "replace": {
         "typo3-ter/buildinfo": "self.version"
