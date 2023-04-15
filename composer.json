@@ -31,6 +31,7 @@
         "ergebnis/composer-normalize": "^2.15",
         "friendsofphp/php-cs-fixer": "^3.16",
         "helmich/typo3-typoscript-lint": "^3.1",
+        "michielroos/typo3scan": "^1.7",
         "phpmd/phpmd": "^2.9",
         "phpstan/phpstan": "^1.10",
         "saschaegerer/phpstan-typo3": "^1.8",
@@ -74,7 +75,8 @@
         "git:pre-commit": [
             "@lint",
             "@php:stan",
-            "@php:md"
+            "@php:md",
+            "@php:scan"
         ],
         "json:lint": [
             "find . ! -path '*.Build/*' -name '*.json' | xargs .Build/bin/jsonlint"
@@ -90,6 +92,9 @@
         ],
         "php:md": [
             ".Build/bin/phpmd ./Classes/ ansi .phpmd.xml"
+        ],
+        "php:scan": [
+            "php .Build/bin/typo3scan.phar scan ./Classes/"
         ],
         "php:stan": [
             ".Build/bin/phpstan analyze -c .phpstan.neon Classes"
@@ -107,6 +112,7 @@
         "lint": "Execute all lint commands",
         "php:lint": "Lint PHP files",
         "php:md": "Execute PHP Mess Detector",
+        "php:scan": "Use typo3scan to scan code for deprecations or changed code",
         "php:stan": "Run the PHP Static Code Analysis",
         "ts:lint": "Lint TypoScript files",
         "yaml:lint": "Lint YAML files"
