@@ -33,9 +33,8 @@
         "helmich/typo3-typoscript-lint": "^3.1",
         "michielroos/typo3scan": "^1.7",
         "phpmd/phpmd": "^2.9",
-        "phpstan/phpstan": "^1.10",
-        "saschaegerer/phpstan-typo3": "^1.8",
-        "seld/jsonlint": "^1.8"
+        "seld/jsonlint": "^1.8",
+        "vimeo/psalm": "dev-master"
     },
     "replace": {
         "typo3-ter/buildinfo": "self.version"
@@ -73,7 +72,7 @@
         ],
         "git:pre-commit": [
             "@lint",
-            "@php:stan",
+            "@php:psalm",
             "@php:md",
             "@php:scan"
         ],
@@ -83,7 +82,6 @@
         "lint": [
             "@php:lint",
             "@json:lint",
-            "@ts:lint",
             "@yaml:lint"
         ],
         "php:lint": [
@@ -95,11 +93,8 @@
         "php:scan": [
             "php .Build/bin/typo3scan.phar scan ./Classes/"
         ],
-        "php:stan": [
-            ".Build/bin/phpstan analyze -c .phpstan.neon Classes"
-        ],
-        "ts:lint": [
-            ".Build/bin/typoscript-lint"
+        "php:psalm": [
+            ".Build/bin/psalm"
         ],
         "yaml:lint": [
             "find . ! -path '*.Build/*' -name '*.yaml' | xargs .Build/bin/yaml-lint"
@@ -112,8 +107,7 @@
         "php:lint": "Lint PHP files",
         "php:md": "Execute PHP Mess Detector",
         "php:scan": "Use typo3scan to scan code for deprecations or changed code",
-        "php:stan": "Run the PHP Static Code Analysis",
-        "ts:lint": "Lint TypoScript files",
+        "php:psalm": "Run the PHP Static Code Analysis",
         "yaml:lint": "Lint YAML files"
     }
 }
