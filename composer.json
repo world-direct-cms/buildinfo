@@ -30,7 +30,6 @@
         "captainhook/captainhook": "^5.16",
         "ergebnis/composer-normalize": "^2.30",
         "friendsofphp/php-cs-fixer": "^3.16",
-        "helmich/typo3-typoscript-lint": "^3.1",
         "michielroos/typo3scan": "^1.7",
         "phpmd/phpmd": "^2.9",
         "seld/jsonlint": "^1.8",

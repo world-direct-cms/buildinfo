@@ -48,7 +48,7 @@ class BuildinfoUtility
      */
     public function __construct()
     {
-        $this->extConf = BasicUtility::getConfiguration('tx_buildinfo');
+        $this->extConf = BasicUtility::getConfiguration();
         $this->projectPath = Environment::getProjectPath() . '/';
     }
 

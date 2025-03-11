@@ -4,8 +4,7 @@ namespace WorldDirect\Buildinfo\Utility;
 
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 
 /*
  * This file is part of the TYPO3 extension "worlddirect/buildinfo".
@@ -29,6 +28,11 @@ use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 class BasicUtility
 {
     /**
+     * Constant holding the extension key.
+     */
+    const EXT_KEY = 'buildinfo';
+
+    /**
      * Constant holding the language prefix
      */
     const LANG_PREFIX = 'LLL:EXT:buildinfo/Resources/Private/Language/locallang_db.xlf:';
@@ -41,13 +45,14 @@ class BasicUtility
      *
      * @return array<string> The settings array
      */
-    public static function getConfiguration(string $detail, string $type = 'plugin'): array
+    public static function getConfiguration(): array
     {
-        /** @var ConfigurationManager $configurationManager */
-        $configurationManager = GeneralUtility::makeInstance(ConfigurationManager::class);
-        $extConf = $configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
-        if (isset($extConf[$type . '.'][$detail . '.']['settings.']) && is_array($extConf[$type . '.'][$detail . '.']['settings.'])) {
-            return $extConf[$type . '.'][$detail . '.']['settings.'];
+        /** @var ExtensionConfiguration $extensionConfiguration */
+        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class);
+        $extConf = $extensionConfiguration->get(self::EXT_KEY);
+
+        if (is_array($extConf)) {
+            return $extConf;
         }
         return [];
     }

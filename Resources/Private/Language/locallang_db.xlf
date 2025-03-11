@@ -5,14 +5,14 @@
             <trans-unit id="buildinfo.constants.title">
                 <source>buildinfo</source>
             </trans-unit>
-                <trans-unit id="buildinfo.constants.buildNumberFile">
-            <source>Build Nummer Datei:Der Dateiname der Datei, welche die aktuelle Build Nummer enthält (relativ zum Projekt Root).</source>
-                </trans-unit>
-            <trans-unit id="buildinfo.constants.buildTimestampFile">
-                <source>Build Timestap Datei:Der Dateiname der Datei, welche den Timestamp des aktuellen Builds enthält (relativ zum Projekt Root).</source>
+            <trans-unit id="buildinfo.extConf.buildNumberFile">
+                <source>Build Nummer Datei: Der Dateiname der Datei, welche die aktuelle Build Nummer enthält (relativ zum Projekt Root).</source>
             </trans-unit>
-            <trans-unit id="buildinfo.constants.gitVersionFile">
-                <source>Git Version Nummer:Git Versionsnummer des aktuellen Composer TYPO3 Projekts (relativ zum Projekt Root).</source>
+            <trans-unit id="buildinfo.extConf.buildTimestampFile">
+                <source>Build Timestap Datei: Der Dateiname der Datei, welche den Timestamp des aktuellen Builds enthält (relativ zum Projekt Root).</source>
+            </trans-unit>
+            <trans-unit id="buildinfo.extConf.gitVersionFile">
+                <source>Git Version Nummer: Git Versionsnummer des aktuellen Composer TYPO3 Projekts (relativ zum Projekt Root).</source>
             </trans-unit>
             <trans-unit id="buildinfo.buildNumber.title">
                 <source>Build Nummer</source>
