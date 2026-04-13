@@ -4,7 +4,6 @@ namespace WorldDirect\Buildinfo\Service;
 
 use TYPO3\CMS\Core\Localization\LanguageService;
 use WorldDirect\Buildinfo\Utility\BuildinfoUtility;
-use TYPO3\CMS\Backend\Toolbar\Enumeration\InformationStatus;
 use TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent;
 
 /*
@@ -62,22 +61,30 @@ class ToolbarService
      * @param SystemInformationToolbarCollectorEvent $event The system information toolbar event
      * @param string $type Which type is it? "buildnumber", "
      * @param string $icon The desired icon to add
-     * @param string $infoStatus The desired info status type
+     * @param string $infoStatus The desired info status type (string value, e.g. 'info', 'warning')
      *
      * @return void
      */
-    public function addFileContentToSystemInformation(SystemInformationToolbarCollectorEvent $event, string $type, string $icon, string $infoStatus = InformationStatus::STATUS_INFO):void
+    public function addFileContentToSystemInformation(SystemInformationToolbarCollectorEvent $event, string $type, string $icon, string $infoStatus = 'info'): void
     {
         // Get the info content for the specific type (timestamp, gitversion, ...)
         $infoContent = $this->buildinfoUtility->getFileContent($type);
 
         // IF the read content is not empty, add it to the toolbar items
         if ($infoContent != '') {
+            // TYPO3 v14+ uses a PHP 8.1 backed enum at TYPO3\CMS\Backend\Toolbar\InformationStatus.
+            // TYPO3 v11-v13 used a string value directly (old Enumeration class was removed in v14).
+            if (class_exists(\TYPO3\CMS\Backend\Toolbar\InformationStatus::class)) {
+                $status = \TYPO3\CMS\Backend\Toolbar\InformationStatus::from($infoStatus);
+            } else {
+                $status = $infoStatus;
+            }
+
             $event->getToolbarItem()->addSystemInformation(
                 $this->languageService->sL(self::LANG_PREFIX . 'buildinfo.' . $type . '.title'),
                 $infoContent,
                 $icon,
-                $infoStatus
+                $status
             );
         }
     }
